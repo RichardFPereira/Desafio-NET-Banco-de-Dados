@@ -1,3 +1,5 @@
+USE Filmes
+
 /******************************************************************************
 1 - Buscar o nome e ano dos filmes
 ******************************************************************************/
@@ -14,7 +16,7 @@ FROM Filmes
 ORDER BY Ano
 
 /******************************************************************************
-3 - Buscar pelo filme de volta para o futuro, trazendo o nome, ano e a duração
+3 - Buscar pelo filme de volta para o futuro, trazendo o nome, ano e a duraÃ§Ã£o
 ******************************************************************************/
 
 SELECT Nome, Ano, Duracao
@@ -22,7 +24,7 @@ FROM Filmes
 WHERE Nome LIKE 'DE VOLTA PARA O FUTURO'
 
 /******************************************************************************
-4 - Buscar os filmes lançados em 1997
+4 - Buscar os filmes lanÃ§ados em 1997
 ******************************************************************************/
 
 SELECT Nome, Ano, Duracao
@@ -30,7 +32,7 @@ FROM Filmes
 WHERE Ano = 1997
 
 /******************************************************************************
-5 - Buscar os filmes lançados APÓS o ano 2000
+5 - Buscar os filmes lanÃ§ados APÃ“S o ano 2000
 ******************************************************************************/
 
 SELECT Nome, Ano, Duracao
@@ -48,7 +50,7 @@ WHERE Duracao BETWEEN 101 AND 149
 ORDER BY Duracao
 
 /******************************************************************************
-7 - Buscar a quantidade de filmes lançadas no ano, agrupando por ano,
+7 - Buscar a quantidade de filmes lanÃ§adas no ano, agrupando por ano,
 ordenando pela duracao em ordem decrescente
 ******************************************************************************/
 
@@ -58,7 +60,7 @@ GROUP BY Ano
 ORDER BY Quantidade DESC
 
 /******************************************************************************
-8 - Buscar os Atores do gênero masculino, retornando o PrimeiroNome, UltimoNome
+8 - Buscar os Atores do gÃªnero masculino, retornando o PrimeiroNome, UltimoNome
 ******************************************************************************/
 
 SELECT Id, PrimeiroNome, UltimoNome, Genero
@@ -66,7 +68,7 @@ FROM Atores
 WHERE Genero = 'M'
 
 /******************************************************************************
-9 - Buscar os Atores do gênero feminino, retornando o PrimeiroNome, UltimoNome, 
+9 - Buscar os Atores do gÃªnero feminino, retornando o PrimeiroNome, UltimoNome, 
 e ordenando pelo PrimeiroNome
 ******************************************************************************/
 
@@ -76,7 +78,7 @@ WHERE Genero = 'F'
 ORDER BY PrimeiroNome
 
 /******************************************************************************
-10 - Buscar o nome do filme e o gênero
+10 - Buscar o nome do filme e o gÃªnero
 ******************************************************************************/
 
 SELECT Nome, Genero
@@ -85,14 +87,14 @@ JOIN FilmesGenero FG ON F.Id = FG.IdFilme
 JOIN Generos G ON FG.IdGenero = G.Id
 
 /******************************************************************************
-11 - Buscar o nome do filme e o gênero do tipo "Mistério"
+11 - Buscar o nome do filme e o gÃªnero do tipo "MistÃ©rio"
 ******************************************************************************/
 
 SELECT Nome, Genero
 FROM Filmes F
 JOIN FilmesGenero FG ON F.Id = FG.IdFilme
 JOIN Generos G ON FG.IdGenero = G.Id
-WHERE Genero = 'Mistério'
+WHERE Genero = 'MistÃ©rio'
 
 /******************************************************************************
 12 - Buscar o nome do filme e os atores, trazendo o PrimeiroNome, 
